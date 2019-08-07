@@ -27,38 +27,29 @@ lossesTotal();
 countGuessesLeft();
 letterGuesses();
 
+var reset = function(){
+  guessesLeft = 9;
+  lettersGuessed = [];
+  var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+}
+
 document.onkeyup = function(event) {
 
     guessesLeft--;
 
  // Determines which key was pressed.
-    var userGuess = event.key;
-    
-    // Reworked our code from last step to use "else if" instead of lots of if statements.
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+    lettersGuessed.push(userGuess);
+	  countGuessesLeft();
+  	letterGuesses();
 
     // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
-    if (userGuess !== computerGuess) {
-        guessesLeft--;
-
-      } else if (userGuess === computerGuess) {
-        wins++;
-        guessesLeft = 9;
-      } else {
-        losses++;
-        guessesLeft = 9;
-      }
+    
 
 
-      // Hide the directions
-      // directionsText.textContent = "";
 
-      // Display the user and computer guesses, and wins/losses/ties.
-     
-      winsText.textContent = "wins: " + wins;
-      lossesText.textContent = "losses: " + losses;
-      tiesText.textContent = "ties: " + ties; 
-      userChoiceText.textContent = "You chose: " + userGuess;
-      computerChoiceText.textContent = "The computer chose: " + computerGuess;
+      
     }
   
 
