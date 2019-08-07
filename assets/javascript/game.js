@@ -3,32 +3,46 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 var wins = 0;
 var losses = 0;
 var guessesLeft= 9;
-var lettersGuessed= "";
+var lettersGuessed= [];
 
-var lettersguessedText = document.getElementById("guesses-so-far-text");
-// var userChoiceText = document.getElementById("userchoice-text");
-// var computerChoiceText = document.getElementById("computerchoice-text");
-var winsText = document.getElementById("wins-text");
-var lossesText = document.getElementById("losses-text");
-var guessesleftText = document.getElementById("guesses-left-text");
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
+function winsTotal() {
+  document.querySelector("#wins").innerHTML = "Wins: " + wins;
+}
+function lossesTotal(){
+  document.querySelector("#losses").innerHTML = "Losses: " + losses;
+}
+
+function countGuessesLeft() {
+	document.querySelector("#guesses-left").innerHTML = "Guesses Left: " + guessesLeft;
+}
+
+function letterGuesses() {
+	document.querySelector("#guesses-so-far").innerHTML = "Your Guesses so far: " + lettersGuessed.join(' ');
+}
+
+winsTotal();
+lossesTotal();
+countGuessesLeft();
+letterGuesses();
 
 document.onkeyup = function(event) {
 
-    // Determines which key was pressed.
+    guessesLeft--;
+
+ // Determines which key was pressed.
     var userGuess = event.key;
-
-    // Randomly chooses a choice from the options array. This is the Computer's guess.
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
+    
     // Reworked our code from last step to use "else if" instead of lots of if statements.
 
     // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
-    if (userGuess === computerGuess) {
-        wins++;
-      } else if (userGuess !== computerGuess) {
-        lettersGuessed.textContent = userGuess;
+    if (userGuess !== computerGuess) {
         guessesLeft--;
+
+      } else if (userGuess === computerGuess) {
+        wins++;
+        guessesLeft = 9;
       } else {
         losses++;
         guessesLeft = 9;
