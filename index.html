@@ -4,29 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Psychic Game</title>
 </head>
 
-<body>
-    
+<body class="bg-dark">
+    <div class="container">
 
-    <strong><h1>Psychic Game</h1></strong>
-
-
-
-    <p>Guess what letter i am thinking of...</p>
+    <div>
+    <strong><h1 class="display-2 text-center text-warning">Psychic Game</h1></strong>
 
     <br>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
 
-    <p id="wins"></p>
-    <p id="losses"></p>
-    <p id="guesses-left"></p>
-    <p id="guesses-so-far"></p>
+        </div> 
+        <img src="https://static01.nyt.com/images/2019/02/03/opinion/sunday/03bruni/03bruni-articleLarge.gif?quality=90&auto=webp" class="img-fluid" alt="Responsive image">
+
+        <div class="col-md-3">
+        
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+
+
+    <p class="display-5 text-center text-warning">Guess what letter i am thinking of...</p>
+    </div>
+    <br>
+
+
+    <p id="wins" class="text-warning text-center"></p>
+    <p id="losses" class="text-warning text-center"></p>
+    <p id="guesses-left" class="text-warning text-center"></p>
+    <p id="guesses-so-far" class="text-warning text-center"></p>
     
 
     
 
+    </div>
 
     <script src="assets/javascript/game.js"></script>
 </body>

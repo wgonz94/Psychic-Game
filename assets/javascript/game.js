@@ -44,9 +44,18 @@ document.onkeyup = function(event) {
 	  countGuessesLeft();
   	letterGuesses();
 
-    // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
     
-
+  if (userGuess === computerGuess){
+    wins++;
+    alert("You Win!!")
+    document.querySelector("#wins").innerHTML = "Wins: " + wins;
+    reset();
+  } else if (guessesLeft === 0) {
+    losses++;
+    alert("You Lose!")
+    document.querySelector("#losses").innerHTML = "Losses: " + losses;
+    reset();
+  }
 
 
       
