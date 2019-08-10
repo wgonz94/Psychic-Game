@@ -52,7 +52,7 @@ document.onkeyup = function(event) {
     reset();
   } else if (guessesLeft === 0) {
     losses++;
-    alert("You Lose!")
+    alert("You Lose! ")
     document.querySelector("#losses").innerHTML = "Losses: " + losses;
     reset();
   }
