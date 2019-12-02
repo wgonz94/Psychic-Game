@@ -1,3 +1,4 @@
+//choices to the computer to use for the user to guess
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 var wins = 0;
@@ -5,6 +6,7 @@ var losses = 0;
 var guessesLeft= 9;
 var lettersGuessed= [];
 
+//generating random choices (or random guess)
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 function winsTotal() {
@@ -26,12 +28,13 @@ winsTotal();
 lossesTotal();
 countGuessesLeft();
 letterGuesses();
-
+//reset the game when user wins or loses
 var reset = function(){
   guessesLeft = 9;
   lettersGuessed = [];
   var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 }
+
 
 document.onkeyup = function(event) {
 
